@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rvtUnit", "rvtUnit\rvtUnit.csproj", "{57F89DD4-FB6A-44C2-BB8E-EEE35896F70A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleTool", "SampleTool\SampleTool\SampleTool.csproj", "{8E1F6CE1-CBE7-4CCE-B1AF-9E1E4032F07E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleTool", "SampleTool\SampleTool.csproj", "{8E1F6CE1-CBE7-4CCE-B1AF-9E1E4032F07E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

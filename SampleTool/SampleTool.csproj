@@ -32,10 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="RevitAPIUI_x64_2013">
-      <HintPath>..\..\rvtUnit\Lib\RevitAPIUI_x64_2013.dll</HintPath>
+      <HintPath>..\rvtUnit\Lib\RevitAPIUI_x64_2013.dll</HintPath>
     </Reference>
     <Reference Include="RevitAPI_x64_2013">
-      <HintPath>..\..\rvtUnit\Lib\RevitAPI_x64_2013.dll</HintPath>
+      <HintPath>..\rvtUnit\Lib\RevitAPI_x64_2013.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,23 +52,23 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\rvtUnit\rvtUnit.csproj">
+    <ProjectReference Include="..\rvtUnit\rvtUnit.csproj">
       <Project>{57F89DD4-FB6A-44C2-BB8E-EEE35896F70A}</Project>
       <Name>rvtUnit</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <Reference Include="Moq">
-      <HintPath>..\..\rvtUnit\Lib\Moq.dll</HintPath>
+      <HintPath>..\rvtUnit\Lib\Moq.dll</HintPath>
     </Reference>
     <Reference Include="nunit.core">
-      <HintPath>..\..\rvtUnit\Lib\nunit.core.dll</HintPath>
+      <HintPath>..\rvtUnit\Lib\nunit.core.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>..\..\rvtUnit\Lib\nunit.framework.dll</HintPath>
+      <HintPath>..\rvtUnit\Lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="TechTalk.SpecFlow">
-      <HintPath>..\..\rvtUnit\Lib\TechTalk.SpecFlow.dll</HintPath>
+      <HintPath>..\rvtUnit\Lib\TechTalk.SpecFlow.dll</HintPath>
     </Reference>
     <Compile Include="Tests\Features\SetParameter.feature.cs">
       <AutoGen>True</AutoGen>
