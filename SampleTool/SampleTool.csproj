@@ -37,6 +37,10 @@
     <Reference Include="RevitAPI_x64_2013">
       <HintPath>..\rvtUnit\Lib\RevitAPI_x64_2013.dll</HintPath>
     </Reference>
+    <Reference Include="rvtUnit">
+      <HintPath>..\rvtUnit\Lib\rvtUnit.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,12 +54,6 @@
     <Compile Include="Helpers\IParameterHelper.cs" />
     <Compile Include="Helpers\ParameterHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\rvtUnit\rvtUnit.csproj">
-      <Project>{57F89DD4-FB6A-44C2-BB8E-EEE35896F70A}</Project>
-      <Name>rvtUnit</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <Reference Include="Moq">

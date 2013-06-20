@@ -20,6 +20,8 @@ namespace rvtUnit.Controls
     {
 		private Brush _currentBrush;
 
+		private static string _lastLocation;
+
         public MainWindowViewModel()
         {
             DLLs = new ObservableCollection<TestableDll>();
@@ -55,16 +57,37 @@ namespace rvtUnit.Controls
 		private void PopulateDLLs()
 		{
 			// get executing assembly
-			string thisAssemblyName = Assembly.GetExecutingAssembly().ManifestModule.Name;
+			Assembly thisAssembly = Assembly.GetExecutingAssembly();
+			string thisAssemblyName = thisAssembly.ManifestModule.Name;
 
-			string path = SelectFolder("Test dlls location", Path.GetDirectoryName(thisAssemblyName), LinkedWindow);
+			if (_lastLocation == null) { _lastLocation = Path.GetDirectoryName(thisAssembly.Location); }
+
+			string path = SelectFolder("Test dlls location", _lastLocation, LinkedWindow);
 
 			if (String.IsNullOrEmpty(path)) { return; }
 
+			_lastLocation = path;
+
+			// ignore dlls
+			string[] ignoreDlls = new string[] 
+			{ 
+				thisAssemblyName, 
+				"nunit.core.dll", 
+				"nunit.core.interfaces.dll", 
+				"nunit.framework.dll", 
+				"nunit.util.dll", 
+				"RevitAPI_x64_2013.dll", 
+				"RevitAPIUI_x64_2013.dll", 
+				"TechTalk.SpecFlow.dll", 
+				"Moq.dll", 
+				"GalaSoft.MvvmLight.dll", 
+				"Castle.DynamicProxy2.dll", 
+				"Castle.Core.dll" 
+			};
 			// adding from dev 
 			foreach (string dll in System.IO.Directory.GetFiles(path, "*" + ".dll"))
 			{
-				if (!dll.EndsWith(thisAssemblyName))
+				if (!ignoreDlls.Contains(Path.GetFileName(dll)))
 				{
 					TestableDll testableDll = new TestableDll(dll);
 					testableDll.Tests = GetTestsFromDll(dll);
@@ -163,9 +186,11 @@ namespace rvtUnit.Controls
 
 		private void CopyRequiredLibsToTemp(string path)
 		{
+			File.Delete(Path.Combine(Path.GetDirectoryName(path), "rvtUnit.dll"));
 			File.Delete(Path.Combine(Path.GetDirectoryName(path), "Moq.dll"));
 			File.Delete(Path.Combine(Path.GetDirectoryName(path), "Castle.Core.dll"));
 			File.Delete(Path.Combine(Path.GetDirectoryName(path), "TechTalk.SpecFlow.dll"));
+			File.Copy(Assembly.GetExecutingAssembly().Location, Path.Combine(Path.GetDirectoryName(path), "rvtUnit.dll"));
 			File.WriteAllBytes(Path.Combine(Path.GetDirectoryName(path), "Moq.dll"), Resources.Resources.Moq);
 			File.WriteAllBytes(Path.Combine(Path.GetDirectoryName(path), "Castle.Core.dll"), Resources.Resources.Castle_Core);
 			File.WriteAllBytes(Path.Combine(Path.GetDirectoryName(path), "TechTalk.SpecFlow.dll"), Resources.Resources.TechTalk_SpecFlow);
