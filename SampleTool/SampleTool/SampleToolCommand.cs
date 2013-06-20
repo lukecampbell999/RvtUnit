@@ -6,7 +6,7 @@ using Autodesk.Revit.UI;
 
 namespace SampleTool
 {
-	public class Command : IExternalCommand
+	public class SampleToolCommand : IExternalCommand
 	{
 		public Result Execute(ExternalCommandData commandData, ref string message, Autodesk.Revit.DB.ElementSet elements)
 		{
