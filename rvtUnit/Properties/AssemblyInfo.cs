@@ -7,7 +7,7 @@
 #endregion
 #region File Information
 //
-// Filename: AssemblyInfo.IntegrationTesting.2013.cs
+// Filename: AssemblyInfo.rvtUnit.2013.cs
 // Author: Yamin Tengono <Yamin.Tengono@arup.com.au>
 //
 // This file is part of CADtools Revit - Testing module.
@@ -21,7 +21,7 @@ using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes:
-[assembly: AssemblyTitle("IntegrationTesting.2013")]
+[assembly: AssemblyTitle("rvtUnit.2013")]
 [assembly: AssemblyDescription("Arup CADtools that extends Revit 2012 - Testing module")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Arup")]

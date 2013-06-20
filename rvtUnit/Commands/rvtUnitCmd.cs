@@ -7,10 +7,10 @@
 #endregion
 #region File Information
 //
-// Filename: IntegrationTestingCmd.cs
+// Filename: rvtUnitCmd.cs
 // Author: Yamin Tengono <Yamin.Tengono@arup.com.au>
 //
-// This file is part of CADtools Revit - IntegrationTesting module.
+// This file is part of CADtools Revit - rvtUnit module.
 //
 #endregion
 
@@ -29,11 +29,11 @@ using System.Reflection;
 using NUnit.Core;
 using System.IO;
 using NUnit.Util;
-using IntegrationTesting.Controls;
+using rvtUnit.Controls;
 using System.Windows.Interop;
-using IntegrationTesting.Helpers;
+using rvtUnit.Helpers;
 
-namespace IntegrationTesting.Commands
+namespace rvtUnit.Commands
 {
 
    /// <summary>
@@ -45,7 +45,7 @@ namespace IntegrationTesting.Commands
 #if !RVT2010
    [Transaction(TransactionMode.Manual)]
 #endif
-   public class IntegrationTestingCmd : IExternalCommand
+   public class rvtUnitCmd : IExternalCommand
    {
       // ======================================================== FIELDS === //
 
@@ -107,6 +107,6 @@ namespace IntegrationTesting.Commands
           view.ShowDialog();
       }
 
-   }  // End of class IntegrationTestingCmd
+   }  // End of class rvtUnitCmd
 
-}  // End of namespace IntegrationTesting.Commands
+}  // End of namespace rvtUnit.Commands

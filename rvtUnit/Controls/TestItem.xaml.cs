@@ -13,7 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using NUnit.Core;
 
-namespace IntegrationTesting.Controls
+namespace rvtUnit.Controls
 {
    /// <summary>
    /// Interaction logic for TestItem.xaml

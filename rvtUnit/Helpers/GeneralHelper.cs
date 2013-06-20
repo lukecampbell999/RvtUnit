@@ -12,7 +12,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using Autodesk.Revit.UI;
 
-namespace IntegrationTesting.Helpers
+namespace rvtUnit.Helpers
 {
 	public static class GeneralHelper
 	{

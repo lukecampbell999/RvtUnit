@@ -8,8 +8,8 @@
     <ProjectGuid>{57F89DD4-FB6A-44C2-BB8E-EEE35896F70A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IntegrationTesting</RootNamespace>
-    <AssemblyName>IntegrationTesting</AssemblyName>
+    <RootNamespace>rvtUnit</RootNamespace>
+    <AssemblyName>rvtUnit</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -71,7 +71,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\IntegrationTestingCmd.cs" />
+    <Compile Include="Commands\rvtUnitCmd.cs" />
     <Compile Include="Controls\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>

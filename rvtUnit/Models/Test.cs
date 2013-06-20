@@ -5,7 +5,7 @@ using System.Text;
 using System.ComponentModel;
 using System.Windows.Media;
 
-namespace IntegrationTesting.Models
+namespace rvtUnit.Models
 {
 	public class Test : INotifyPropertyChanged
 	{

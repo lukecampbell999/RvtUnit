@@ -10,7 +10,7 @@
 // Filename: TestItemViewModel.cs
 // Author: Yamin Tengono <Yamin.Tengono@arup.com.au>
 //
-// This file is part of CADtools Revit - IntegrationTesting module.
+// This file is part of CADtools Revit - rvtUnit module.
 //
 #endregion
 
@@ -25,9 +25,9 @@ using System.Windows.Media.Imaging;
 using System.Drawing;
 using System.IO;
 using System.Drawing.Imaging;
-using IntegrationTesting.Helpers;
+using rvtUnit.Helpers;
 
-namespace IntegrationTesting.Controls
+namespace rvtUnit.Controls
 {
 
    /// <summary>
@@ -103,4 +103,4 @@ namespace IntegrationTesting.Controls
 
    }  // End of class TestItemViewModel
 
-}  // End of namespace IntegrationTesting.Controls
+}  // End of namespace rvtUnit.Controls

@@ -5,7 +5,7 @@ using System.Text;
 using System.IO;
 using System.ComponentModel;
 
-namespace IntegrationTesting.Models
+namespace rvtUnit.Models
 {
     public class TestableDll : INotifyPropertyChanged
     {

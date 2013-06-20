@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using NUnit.Core;
 
-namespace IntegrationTesting.Helpers
+namespace rvtUnit.Helpers
 {
 	public class SimpleTestFilter : TestFilter
 	{

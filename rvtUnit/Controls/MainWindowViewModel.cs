@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using IntegrationTesting.Models;
+using rvtUnit.Models;
 using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Command;
 using System.IO;
@@ -10,11 +10,11 @@ using NUnit.Core;
 using NUnit.Util;
 using System.Collections;
 using System.Reflection;
-using IntegrationTesting.Helpers;
+using rvtUnit.Helpers;
 using System.Windows.Media;
 using System.Windows;
 
-namespace IntegrationTesting.Controls
+namespace rvtUnit.Controls
 {
     public class MainWindowViewModel
     {
@@ -192,9 +192,9 @@ namespace IntegrationTesting.Controls
             return testResult;
         }
 
-		private List<IntegrationTesting.Models.Test> GetTestsFromDll(string dll)
+		private List<rvtUnit.Models.Test> GetTestsFromDll(string dll)
 		{
-			List<IntegrationTesting.Models.Test> tests = new List<IntegrationTesting.Models.Test>();
+			List<rvtUnit.Models.Test> tests = new List<rvtUnit.Models.Test>();
 			try
 			{
 				var assembly = Assembly.Load(GetByteArrayForFile(dll));
@@ -215,7 +215,7 @@ namespace IntegrationTesting.Controls
 					Brush brush = PickAlternateBrush();
 					foreach (var method in testMethods)
 					{
-						tests.Add(new IntegrationTesting.Models.Test() { TestName = method.Name, IsChecked = true, Brush = brush });
+						tests.Add(new rvtUnit.Models.Test() { TestName = method.Name, IsChecked = true, Brush = brush });
 					}
 				}
 			}
