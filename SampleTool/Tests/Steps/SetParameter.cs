@@ -13,14 +13,17 @@ namespace SampleTool.Tests.Steps
         public void GivenIHaveAParameterCalled(string paramName)
         {
 			Mock<IParameterHelper> paramHelperMoq = new Mock<IParameterHelper>();
+			paramHelperMoq.Setup(paramHelper => paramHelper.HasParameter(paramName)).Returns(true);
 			ScenarioContext.Current.Add("paramHelperMoq", paramHelperMoq);
+			ScenarioContext.Current.Add("paramName", paramName);
         }
         
         [When(@"I change its value to (.*)")]
         public void WhenIChangeItsValueTo(string value)
         {
 			Mock<IParameterHelper> paramHelperMoq = (Mock<IParameterHelper>)ScenarioContext.Current["paramHelperMoq"];
-			paramHelperMoq.Setup(paramHelper => paramHelper.GetParameterValueAsString(It.IsAny<string>())).Returns(value);
+			string paramName = (string)ScenarioContext.Current["paramName"];
+			paramHelperMoq.Setup(paramHelper => paramHelper.GetParameterValueAsString(paramName)).Returns(value);
         }
         
         [Then(@"the ""(.*)"" value should be (.*)")]
