@@ -12,7 +12,7 @@
     <AssemblyName>SampleTool</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-	<ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework" />
     <Reference Include="RevitAPIUI_x64_2013">
       <HintPath>..\rvtUnit\Lib\RevitAPIUI_x64_2013.dll</HintPath>
     </Reference>
@@ -65,6 +66,12 @@
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\rvtUnit\Lib\nunit.framework.dll</HintPath>
+    </Reference>
+	<Reference Include="nunit.core.interfaces">
+      <HintPath>..\rvtUnit\Lib\nunit.core.interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.util">
+      <HintPath>..\rvtUnit\Lib\nunit.util.dll</HintPath>
     </Reference>
     <Reference Include="TechTalk.SpecFlow">
       <HintPath>..\rvtUnit\Lib\TechTalk.SpecFlow.dll</HintPath>
