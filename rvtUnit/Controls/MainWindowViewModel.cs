@@ -24,6 +24,9 @@ namespace rvtUnit.Controls
 
         public MainWindowViewModel()
         {
+
+           AppDomain.CurrentDomain.AssemblyResolve += this.HandleAssemblyResolve;
+
             DLLs = new ObservableCollection<TestableDll>();
 
             PopulateDLLs();
@@ -32,7 +35,55 @@ namespace rvtUnit.Controls
             RunAllTestsCommand = new RelayCommand(this.OnRunAllTests);
         }
 
-        public ObservableCollection<TestableDll> DLLs { get; set; }
+       /// <summary>
+		/// Handle assembly resolve event.  Tries to load a DLL when the framework is looking for it
+		/// </summary>
+		/// <param name="sender">sender object.</param>
+		/// <param name="args">Event arguments.</param>
+		/// <returns>The assembly loaded or null.</returns>
+       private Assembly HandleAssemblyResolve(object sender, ResolveEventArgs args)
+       {
+      
+			string dllFileName = args.Name.Substring(0, args.Name.IndexOf(",", StringComparison.InvariantCulture)) + ".dll";
+
+#if DEBUG
+// Log something to event log to show assemlby being resolved
+#endif
+
+			string targetFile;
+			Assembly theAsm = null;
+
+          // First try the folder where the test DLL's are being loaded from
+          if (_lastLocation != null)
+          {
+
+             targetFile = _lastLocation + "\\" + dllFileName;
+             if (File.Exists(targetFile))
+             {
+                theAsm = Assembly.LoadFrom(targetFile);
+             }
+          }
+
+          // If the asembly is still null, try load it from the current directory
+          if (theAsm == null)
+          {
+
+             targetFile = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) +"\\" + dllFileName;
+             if (File.Exists(targetFile))
+             {
+                theAsm = Assembly.LoadFrom(targetFile);
+             }
+          }
+          
+#if DEBUG
+// Log wether the assembly was found
+#endif
+
+			// Return null when DLL is not found.  This will tell the .NetFramework to try other AssemblyResolve handlers
+			return theAsm;
+       }
+
+       public ObservableCollection<TestableDll> DLLs { get; set; }
 
         public RelayCommand<string> RunTestCommand { get; set; }
 
@@ -68,7 +119,7 @@ namespace rvtUnit.Controls
 
 			_lastLocation = path;
 
-			// ignore dlls
+			// Don't inspect some dlls when looking for assemblies to test
 			string[] ignoreDlls = new string[] 
 			{ 
 				thisAssemblyName, 
@@ -84,7 +135,7 @@ namespace rvtUnit.Controls
 				"Castle.DynamicProxy2.dll", 
 				"Castle.Core.dll" 
 			};
-			// adding from dev 
+			// Get a list of DLL's that potentially contain tests 
 			foreach (string dll in System.IO.Directory.GetFiles(path, "*" + ".dll"))
 			{
 				if (!ignoreDlls.Contains(Path.GetFileName(dll)))
