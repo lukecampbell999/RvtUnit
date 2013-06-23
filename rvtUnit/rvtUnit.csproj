@@ -13,7 +13,7 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-	<ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -85,7 +85,6 @@
       <DependentUpon>TestResultViewer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\TestResultViewerViewModel.cs" />
-    <Compile Include="Helpers\GeneralHelper.cs" />
     <Compile Include="Helpers\VisibilityConverter.cs" />
     <Compile Include="Models\TestableDll.cs" />
     <Compile Include="Models\Test.cs" />
@@ -134,6 +133,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Lib\TechTalk.SpecFlow.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Helpers\Helpers.csproj">
+      <Project>{440DE7E1-458E-4F4F-8726-5111910A100D}</Project>
+      <Name>Helpers</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

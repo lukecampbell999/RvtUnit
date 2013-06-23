@@ -5,14 +5,14 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8E1F6CE1-CBE7-4CCE-B1AF-9E1E4032F07E}</ProjectGuid>
+    <ProjectGuid>{440DE7E1-458E-4F4F-8726-5111910A100D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SampleTool</RootNamespace>
-    <AssemblyName>SampleTool</AssemblyName>
+    <RootNamespace>Helpers</RootNamespace>
+    <AssemblyName>Helpers</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+	<ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,63 +32,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="RevitAPIUI_x64_2013">
       <HintPath>..\rvtUnit\Lib\RevitAPIUI_x64_2013.dll</HintPath>
     </Reference>
-    <Reference Include="RevitAPI_x64_2013">
-      <HintPath>..\rvtUnit\Lib\RevitAPI_x64_2013.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SampleToolCommand.cs" />
-    <Compile Include="Helpers\IParameterHelper.cs" />
-    <Compile Include="Helpers\ParameterHelper.cs" />
+    <Compile Include="GeneralHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <Reference Include="Moq">
-      <HintPath>..\rvtUnit\Lib\Moq.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.core">
-      <HintPath>..\rvtUnit\Lib\nunit.core.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\rvtUnit\Lib\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.core.interfaces">
-      <HintPath>..\rvtUnit\Lib\nunit.core.interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.util">
-      <HintPath>..\rvtUnit\Lib\nunit.util.dll</HintPath>
-    </Reference>
-    <Reference Include="TechTalk.SpecFlow">
-      <HintPath>..\rvtUnit\Lib\TechTalk.SpecFlow.dll</HintPath>
-    </Reference>
-    <Compile Include="Tests\Features\SetParameter.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SetParameter.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\Steps\SetParameter.cs" />
-    <Compile Include="Tests\UnitTests\HasParameter_Tests.cs" />
-    <None Include="Tests\Features\SetParameter.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SetParameter.feature.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Helpers\Helpers.csproj">
-      <Project>{440DE7E1-458E-4F4F-8726-5111910A100D}</Project>
-      <Name>Helpers</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

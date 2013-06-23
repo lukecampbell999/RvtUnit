@@ -26,6 +26,7 @@ using Autodesk.Revit.Attributes;
 
 using System;
 using System.Reflection;
+using Helpers;
 using NUnit.Core;
 using System.IO;
 using NUnit.Util;

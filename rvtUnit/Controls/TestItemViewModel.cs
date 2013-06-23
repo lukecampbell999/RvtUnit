@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Helpers;
 using NUnit.Core;
 using System.Windows.Media.Imaging;
 using System.Drawing;

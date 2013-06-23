@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Media.Imaging;
+using System.Diagnostics;
 using System.Drawing;
-using System.IO;
 using System.Drawing.Imaging;
+using System.IO;
+using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Interop;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
+using System.Windows.Media.Imaging;
 using Autodesk.Revit.UI;
 
-namespace rvtUnit.Helpers
+namespace Helpers
 {
 	public static class GeneralHelper
 	{

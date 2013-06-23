@@ -26,7 +26,7 @@ namespace SampleTool.Tests.UnitTests
 		[Test]
 		public void ShouldNotHaveParameter_Test()
 		{
-			Document document = rvtUnit.Helpers.GeneralHelper.ActiveUIDocument.Document;
+			Document document = Helpers.GeneralHelper.ActiveUIDocument.Document;
 			IParameterHelper parameterHelper = new ParameterHelper(document);
 			Assert.That(parameterHelper.HasParameter("SomeParameterThatNormallyDoesnotExist"), Iz.False);
 		}
@@ -34,7 +34,7 @@ namespace SampleTool.Tests.UnitTests
 		[Test]
 		public void ShouldHaveParameter_Test()
 		{
-			Document document = rvtUnit.Helpers.GeneralHelper.ActiveUIDocument.Document;
+			Document document = Helpers.GeneralHelper.ActiveUIDocument.Document;
 			IParameterHelper parameterHelper = new ParameterHelper(document);
 			Assert.That(parameterHelper.HasParameter("Project Name"), Iz.True);
 		}
