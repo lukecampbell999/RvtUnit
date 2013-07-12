@@ -302,7 +302,7 @@ namespace rvtUnit.Controls
 
       private static byte[] GetByteArrayForFile(string filename)
       {
-         FileStream fs = new FileStream(filename, FileMode.Open);
+         FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
          byte[] buffer = new byte[(int)fs.Length];
          fs.Read(buffer, 0, buffer.Length);
          fs.Close();
