@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-using SampleTool.Helper;
 using Autodesk.Revit.DB;
+using SampleTool.Helper;
 
 namespace SampleTool.Tests.UnitTests
 {
@@ -38,13 +38,5 @@ namespace SampleTool.Tests.UnitTests
 			IParameterHelper parameterHelper = new ParameterHelper(document);
 			Assert.That(parameterHelper.HasParameter("Project Name"), Iz.True);
 		}
-
-        [Test]
-        public void ShouldNotHaveParameter2_Test()
-        {
-            Document document = Helpers.GeneralHelper.ActiveUIDocument.Document;
-            IParameterHelper parameterHelper = new ParameterHelper(document);
-            Assert.That(parameterHelper.HasParameter("SomeParameterThatNormallyDoesnotExist"), Iz.False);
-        }
-    }
+	}
 }
