@@ -45,6 +45,13 @@ namespace SampleTool.Tests.UnitTests
             Document document = Helpers.GeneralHelper.ActiveUIDocument.Document;
             IParameterHelper parameterHelper = new ParameterHelper(document);
             Assert.That(parameterHelper.HasParameter("SomeParameterThatNormallyDoesnotExist"), Iz.False);
+            Assert.AreEqual(1, 2);
+        }
+
+        [Test]
+        public void ExpectBroken_Test()
+        {
+            Assert.AreEqual(1, 2);
         }
     }
 }

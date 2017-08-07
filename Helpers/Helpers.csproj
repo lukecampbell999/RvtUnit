@@ -38,10 +38,10 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="RevitAPI">
-      <HintPath>..\..\..\Users\CAM82478\Documents\revit_c_sharp_2017\MMD_DD_FLIP_ModuleTests\bin\Debug\RevitAPI.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2015\RevitAPI.dll</HintPath>
     </Reference>
     <Reference Include="RevitAPIUI">
-      <HintPath>..\..\..\Users\CAM82478\Documents\revit_c_sharp_2017\MMD_DD_FLIP_ModuleTests\bin\Debug\RevitAPIUI.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2015\RevitAPIUI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

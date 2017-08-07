@@ -61,10 +61,10 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="RevitAPI">
-      <HintPath>..\..\..\BitBucket\add_on_tracking_revit\CommandLogger\AddIn\RevitAPI.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2015\RevitAPI.dll</HintPath>
     </Reference>
     <Reference Include="RevitAPIUI">
-      <HintPath>..\..\..\BitBucket\pumping_station_c_sharp\Source\lib\RevitAPIUI.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2015\RevitAPIUI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
